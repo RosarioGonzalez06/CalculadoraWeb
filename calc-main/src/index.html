@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Web DAM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="calculadora">
+    <h1>Calculadora Web</h1>
+    <input type="text" id="display" disabled>
+    <div class="botones">
+
+
+      <button data-action="numero" data-value="7">7</button>
+      <button data-action="numero" data-value="8">8</button>
+      <button data-action="numero" data-value="9">9</button>
+      <button data-action="operacion" data-value="/">/</button>
+      <button data-action="limpiar">C</button>
+      
+
+      <button data-action="numero" data-value="4">4</button>
+      <button data-action="numero" data-value="5">5</button>
+      <button data-action="numero" data-value="6">6</button>
+      <button data-action="operacion" data-value="*">*</button>
+      <button data-action="operacion" data-value="x^y">x^y</button>
+      
+
+      <button data-action="numero" data-value="1">1</button>
+      <button data-action="numero" data-value="2">2</button>
+      <button data-action="numero" data-value="3">3</button>
+      <button data-action="operacion" data-value="-">-</button>
+      <button data-action="operacion" data-value="√">√</button>
+      
+
+      
+      <button data-action="numero" data-value="0">0</button>
+      <button data-action="decimal">.</button>
+      <button data-action="igual">=</button>
+      <button data-action="operacion" data-value="+">+</button>
+      <button data-action="operacion" data-value="x!">x!</button>
+    </div>
+  </div>
+
+  <script src="index.js" type="module"></script>
+</body>
+</html>
