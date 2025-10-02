@@ -1,3 +1,5 @@
+
+import { interval, tap } from "rxjs";
 const display = document.getElementById("display") as HTMLInputElement;
 const buttons = document.querySelectorAll("button");
 
@@ -38,7 +40,6 @@ buttons.forEach((button) => {
       if (numeroAnterior && (tipoOperacion === "√" || tipoOperacion === "x!")) {
         switch (tipoOperacion) {
           case "√":
-            console.log("ha entrado raiz");
             raiz();
             break;
           case "x!":
@@ -50,9 +51,7 @@ buttons.forEach((button) => {
       }
     } else if (action === "igual") {
       //Hemos pulsado igual
-      console.log("numeroAnterior: " + numeroAnterior);
       if (!numeroAnterior || !numeroActual) return; //Se necesitam dos numeros
-      console.log("tipoOperacion: " + tipoOperacion);
       switch (tipoOperacion) {
         case "+":
           suma();
@@ -74,7 +73,6 @@ buttons.forEach((button) => {
           elevar();
           break;
         case "√":
-          console.log("ha entrado raiz");
           raiz();
           break;
         case "x!":
@@ -151,4 +149,19 @@ function factorial(): void {
     numeroActual = result.toString();
   }
   numeroAnterior = "";
+
+ 
 }
+
+//funcion para mostrar el reloj
+function reloj(): void {
+    interval(1000).pipe(
+        tap(() => {
+            const reloj = document.getElementById("reloj");
+        if (reloj) {
+            reloj.innerHTML = new Date().toLocaleTimeString();
+        }
+        })
+    ).subscribe();
+}
+reloj();

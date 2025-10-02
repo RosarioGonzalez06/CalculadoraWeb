@@ -11,6 +11,11 @@ body {
   background-color: #9eb2f3;
 }
 
+.reloj {
+  color: rgba(255, 255, 255, 0.895);
+  text-align: center;
+}
+
 .calculadora {
   background: #0ba0b1;
   padding: 20px;
